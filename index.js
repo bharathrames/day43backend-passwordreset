@@ -15,10 +15,12 @@ dotenv.config()
 dataBaseConnection()
 
 // middlewares
-app.use(cors({
-    origin:"https://passwordreset123.netlify.app"
-}))
+app.use(cors())
 app.use(express.json())
+
+app.get("/", function (req, res) {
+    res.send("<h1>passwordreset</h1>");
+  });
 
 // Routers
 // signup router
